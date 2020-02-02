@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block head %} 
-<title>Task Master</title>
+<title>Schedule book</title>
 {% endblock %}
 
 {% block body %}
 <div class="content">
-    <h1 style="text-align: center">Task Master</h1>
+    <h1 style="text-align: center">Schedule</h1>
        
     {% if tasks|length < 1%}
       <h4 style="text-align: center">There are no tasks. Create one below! </h4>  
@@ -15,8 +15,8 @@
 
         <table>
             <tr>
-                <th>Task</th>
-                <th>Added</th>
+                <th>Tasks</th>
+                <th>Time</th>
                 <th>Actions</th>
             </tr>
             {% for task in tasks %}
@@ -33,6 +33,7 @@
         </table>
         {% endif %}
         <form action="/" method="POST">
+            <br>
             <input type="text" name="content" id="content">
             <input type="submit" value="Add Task">
         </form>

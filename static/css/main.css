@@ -1,6 +1,8 @@
 body, html {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url(prime.jpg)
+    
 }
 
 .content {
@@ -9,11 +11,14 @@ body, html {
 }
 
 table, td, th {
-    border: 1px solid #aaa;
+    border: 3px solid black;
+
+    
 }
 
 table {
     border-collapse: collapse;
+    background-color: whitesmoke;
     width: 100%;
 }
 
@@ -31,5 +36,5 @@ td {
 }
 
 #content {
-    width: 70%;
+    width: 75%;
 }
