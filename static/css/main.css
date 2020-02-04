@@ -1,8 +1,12 @@
 body, html {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
-    background-image: url(prime.jpg)
+    background-image: url(lattice.png)
     
+}
+
+h1{
+    color: white;
 }
 
 .content {
