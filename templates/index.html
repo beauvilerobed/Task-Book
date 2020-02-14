@@ -1,41 +1,47 @@
 {% extends 'base.html' %}
 
 {% block head %} 
-<title>Schedule book</title>
-{% endblock %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% block body %}
-<div class="content">
-    <h1 style="text-align: center">Schedule</h1>
+</body>
        
     {% if tasks|length < 1%}
-      <h4 style="text-align: center">There are no at the moment. You can add one now! </h4>  
+      <h4 style="text-align: center" >There are no tasks at the moment. You can add a new on below! </h4>  
 
     {% else %}
-
-        <table>
-            <tr>
-                <th>Tasks</th>
-                <th>Time</th>
-                <th>Actions</th>
-            </tr>
             {% for task in tasks %}
-            <tr>
-                <td>{{ task.content }}</td>
-                <td>{{ task.date_created.date() }}</td>
-                <td>
-                    <a href="/delete/{{task.id}}">Delete</a>
-                    <br>
-                    <a href="/update/{{task.id}}">Update</a>
-                </td>        
-            </tr>
+                <div class="content">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <div id="mydivheader">Task {{loop.index }}  </div>
+                        <br>
+                        <tr>{{ task.content }}</tr>
+                    </div>
+                      <div class="flip-card-back">
+                        <tr>
+                            <br>
+                            <td>
+                                <div id="mydivheader2">
+                                <a href="/delete/{{task.id}}" class="delete"> Delete</a>
+                                <a href="/update/{{task.id}}" class="update">Update</a>
+                                </div>
+                            </td>    
+                            <br>
+                            <div id="mydivheader3">
+                            <td>date created:</1td>
+                            <td>{{ task.date_created.date() }}</td>   
+                            </div> 
+                        </tr>
+                      </div>
+                    </div>
+                </div>
+                  <br>
+                </div>
             {% endfor %}
-        </table>
-        {% endif %}
-        <form action="/" method="POST">
-            <br>
-            <input type="text" name="content" id="content">
-            <input type="submit" value="Add Task">
-        </form>
-</div>           
+    {% endif %}
+</div>      
+<form action="/" method="POST">
+    <input type="text" name="content" id="content" placeholder="Add tasks here and press enter">
+</form>     
 {% endblock %}
