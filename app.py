@@ -3,7 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '$\xc1Q\\Y\x0e\xbeo{\x1f\xdc\xff\xeb/\xcd\x04~\xc6\xa8;_\xc9\xb4'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+
 db = SQLAlchemy(app)
 
 class Todo(db.Model): 
@@ -13,7 +15,6 @@ class Todo(db.Model):
 
     def __repr__(self):
         return '<Task %r>' % self.id
-
 
 
 @app.route('/', methods=['POST', 'GET'])

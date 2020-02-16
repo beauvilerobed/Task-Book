@@ -2,6 +2,16 @@
 
 {% block head %} 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="topnav">
+  <a href="#login">Login</a>
+  <a href="#sign up">Sign up</a>
+  <div class="search-container">
+    <form action="/" method="POST">
+      <input type="text" name="content" id="content" placeholder="Add tasks here" name="Submit">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
 
 </body>
        
@@ -40,8 +50,5 @@
                 </div>
             {% endfor %}
     {% endif %}
-</div>      
-<form action="/" method="POST">
-    <input type="text" name="content" id="content" placeholder="Add tasks here and press enter">
-</form>     
+</div>        
 {% endblock %}
